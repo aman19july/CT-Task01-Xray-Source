@@ -77,16 +77,12 @@ def validate(results, cfg, save_dir="."):
     axes[1, 0].set_xlabel("Angle from center (deg)")
     axes[1, 0].set_ylabel("Thickness (mm)")
 
-    image, _, _ = results["flat_field"]
-    im = axes[1, 1].imshow(image.T, origin="lower", cmap="gray")
-    axes[1, 1].set_title("Flat-field / no-object intensity map")
-    plt.colorbar(im, ax=axes[1, 1])
+    axes[1, 1].axis("off")
 
     axes[1, 2].axis("off")
     axes[1, 2].text(0.05, 0.5,
                      "See mAs_vs_weight.png\nfor current/exposure\nscaling checks.",
                      fontsize=10)
-
     plt.tight_layout()
     out_path = f"{save_dir}/validation_overview.png"
     plt.savefig(out_path, dpi=120)
