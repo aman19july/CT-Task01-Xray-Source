@@ -24,7 +24,7 @@ import config
 from spectrum import generate_spectrum, apply_filtration, sample_photon_energies
 from geometry import sample_focal_spot, sample_directions
 from weights import calculate_photon_weights, apply_bowtie, apply_heel_effect, add_poisson_noise
-from flat_field import generate_flat_field
+
 from validate import validate, validate_current_and_exposure_scaling
 
 
@@ -68,11 +68,6 @@ def run_source_simulation(cfg=config, rng_seed=0):
     #    the random ENERGY sampling in step 2). See note below.
     photon_weights = add_poisson_noise(photon_weights, enable=cfg.ENABLE_POISSON_ON_WEIGHTS, rng=rng)
 
-    # 9) No-object / flat-field projection at the detector plane (visualization only)
-    flat_field_image = generate_flat_field(
-        photon_positions, photon_directions, photon_weights,
-        cfg.SOURCE_POSITION, cfg.DETECTOR_POSITION,
-    )
 
     return {
         "energies_grid": energies_grid,
@@ -84,7 +79,7 @@ def run_source_simulation(cfg=config, rng_seed=0):
         "photon_weights": photon_weights,
         "bowtie_thickness": bowtie_thickness,
         "bowtie_transmission": bowtie_transmission,
-        "flat_field": flat_field_image,
+    
     }
 
 
