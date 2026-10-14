@@ -17,7 +17,7 @@ import numpy as np
 # ---------------------------------------------------------------
 # SIMULATION PARAMETER (not physical) -- kept fixed
 # ---------------------------------------------------------------
-N_SAMPLES = 100_000
+N_SAMPLES = 56,832
 
 # ---------------------------------------------------------------
 # PHYSICAL TUBE PARAMETERS (edit these to run different scenarios)
