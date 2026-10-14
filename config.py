@@ -27,7 +27,7 @@ N_SAMPLES = 100_000
 KVP = 120.0                  # tube voltage, kV
 MA = 200.0                   # tube current, mA
 EXPOSURE_TIME = 1          # seconds
-AL_FILTRATION_MM = 4.0       # aluminum filtration thickness, mm
+AL_FILTRATION_MM = 2.5       # aluminum filtration thickness, mm
 
 FOCAL_SPOT_SMALL = (0.4, 0.5)   # (width_mm, height_mm)
 FOCAL_SPOT_LARGE = (0.8, 1.1)
